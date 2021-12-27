@@ -1,5 +1,12 @@
+const APIUrl = 'http://localhost:5000/';
+
 export const pokedex = {
-  getAll: 'http://localhost:5000/api/Pokemon/GetPokemons',
-  getByName: 'http://localhost:5000/api/Pokemon/GetPokemonsByName',
-  getByNameXML: 'http://localhost:5000/api/Pokemon/GetPokemonsByNameXML',
-}
+  getAll: `${APIUrl}GetPokemons`,
+  getByName: `${APIUrl}GetPokemonsByName`,
+  getByNameXML: `${APIUrl}GetPokemonsByNameXML`,
+};
+
+export const auth = {
+  signIn: `${APIUrl}api/Usuarios/Login`,
+  signUp: `${APIUrl}api/Usuarios/Criar`,
+};
