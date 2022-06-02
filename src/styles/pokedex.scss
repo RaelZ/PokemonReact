@@ -1,0 +1,589 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+$poison: "poison";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Rajdhani", sans-serif;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+header {
+  display: grid;
+  grid: auto-flow / 33.33% 33.33% 33.33%;
+  justify-content: center;
+  align-items: center;
+  color: #707070;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #707070;
+  position: relative;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+}
+.clear {
+  clear: both;
+  height: 20px;
+}
+.logo {
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 2%;
+  button {
+    box-shadow: 0 0 8px #000000af;
+  }
+}
+.buttonsModal {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 2%;
+  padding-top: 30px;
+  button {
+    box-shadow: 0 0 8px #000000af;
+  }
+}
+.cadastrar {
+  padding: 1% 4%;
+  margin: 0 2%;
+  background-color: #303030;
+  color: #fff;
+  border: 0;
+  border-radius: 16px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.cadastrar:hover {
+  background-color: #0f0f0f;
+}
+.entrar {
+  padding: 1% 4%;
+  margin: 0 2%;
+  background-color: red;
+  color: #fff;
+  border: 0;
+  border-radius: 16px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.entrar:hover {
+  background-color: #5f0000;
+}
+.fullSite {
+  min-height: 100%;
+  height: calc(100vh - 140px);
+}
+.main {
+  display: flex;
+  width: 100%;
+  min-height: 469px;
+  height: calc(100vh - 140px);
+  background-image: radial-gradient(red, #800000);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1% 10%;
+  min-height: 336px;
+}
+.left {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  direction: rtl;
+  border-radius: 10px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+::-webkit-scrollbar-track {
+  background: #aaa;
+  border-radius: 10px 0 0 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: radial-gradient(farthest-corner at 90% 50%, #fff, red 40%);
+  border-right: 2px solid #1a1a1aAF;
+  border-radius: 8px 0 0 8px;
+}
+.right {
+  width: 100%;
+}
+.modalBG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000df;
+
+  .modal {
+    position: absolute;
+    min-width: 480px;
+    min-height: 360px;
+    color: #000;
+    background-image: linear-gradient(black, rgba(255, 255, 255, 0), black),
+      linear-gradient(90deg, black, red, black);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 16px;
+    box-shadow: 0 0 15px #000;
+
+    .modalCenter {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2% 0;
+      color: #fff;
+
+      .modalTitle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        p {
+          font-weight: 800;
+          font-size: 36px;
+        }
+        .click {
+          transition: 0.2s;
+          cursor: pointer;
+        }
+        .click:hover {
+          color: red;
+        }
+      }
+      .input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 32px 0;
+        width: 90%;
+        align-items: center;
+        input:nth:nth-child(1) {
+          width: 100%;
+        }
+        input {
+          width: 97%;
+          line-height: 35px;
+          padding: 0 4%;
+          margin: 0 0 5% 0;
+          border-radius: 25px;
+          font-weight: 600;
+          font-size: 16px;
+        }
+        p {
+          margin: 0;
+          padding: 0 4%;
+          font-size: 24px;
+        }
+        .form {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          div {
+            width: 100%;
+          }
+        }
+
+        .inputPassword {
+          width: 100%;
+          display: block;
+          position: relative;
+
+          .divInputPassword {
+            width: 98%;
+            position: absolute;
+
+            input.password {
+              width: 100%;
+              position: relative;
+              padding-right: 40px;
+              padding-left: 4%;
+            }
+
+            .passwordButton {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 28px;
+              height: 28px;
+              position: absolute;
+              top: 5px;
+              right: 10px;
+              transition: 0.25s;
+              cursor: pointer;
+            }
+            
+            .passwordButton:hover {
+              position: absolute;
+              border-radius: 25px;
+              background-color: #0000007f;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.backgroundList {
+  box-shadow: 0 0 30px #000;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  background-color: #555555;
+  width: 35%;
+  height: 100%;
+  min-width: 384px;
+  min-height: 434px;
+  border: 5px solid #000;
+  border-radius: 16px 0 0 16px;
+  border-right: 0;
+}
+.backgroundView {
+  box-shadow: 0 0 30px #000;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  min-width: 384px;
+  min-height: 434px;
+  width: 25%;
+  height: 100%;
+  border: 5px solid #000;
+  border-radius: 0 16px 16px 0;
+  border-left: 0;
+  transition: 0.25s;
+}
+.middle {
+  min-width: 20px;
+  min-height: 447px;
+  height: 103%;
+  border: 5px solid #000;
+  position: relative;
+  border-radius: 8px;
+  top: -1.5%;
+}
+.lista {
+  width: 100%;
+  background-color: white;
+  direction: ltr;
+}
+table {
+  width: 100%;
+}
+.numero {
+  width: 15%;
+  padding-left: 2%;
+}
+.nome {
+  width: 25%;
+}
+.tipo1 {
+  width: 25%;
+  text-align: center;
+}
+.tipoText {
+  border-radius: 16px;
+  text-align: center;
+  padding: 2px;
+}
+.tipo2 {
+  width: 25%;
+  text-align: center;
+}
+td {
+  padding: 0 8px;
+  height: 35px;
+}
+tr {
+  background-color: #d5d5d5;
+}
+.listinha {
+  tr {
+    cursor: pointer;
+  }
+  tr:hover {
+    color: #fff;
+    background-color: #0000007f;
+    box-shadow: 0 0 20px black inset;
+    td {
+      p {
+        border: 2px solid #0000007f;
+      }
+    }
+  }
+  tr:hover:nth-child(even) {
+    color: #fff;
+    background-color: #0000007f;
+    box-shadow: 0 0 20px black inset;
+    td {
+      p {
+        border: 2px solid #000000AF;
+      }
+    }
+  }
+}
+tr:nth-child(even) {
+  background: #fff;
+}
+.pokemonView {
+  width: 100%;
+}
+.pokemonViewTop {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  border-bottom: 5px solid #000;
+  padding-right: 5%;
+  img {
+    width: 256px;
+    height: auto;
+  }
+}
+.pokemonViewTopInfo {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.geral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.total {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  font-weight: 600;
+  font-size: 24px;
+}
+.status {
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-around;
+  p {
+    text-align: center;
+  }
+}
+
+.PokemonName {
+  padding-left: 10%;
+  font-size: 28px;
+}
+.PokemonGen {
+  padding-left: 10%;
+  color: #686868;
+}
+.PokemonId {
+  padding-left: 10%;
+  font-size: 42px;
+}
+.pokemonType {
+  display: flex;
+  justify-content: center;
+}
+.pokemonImage {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.types {
+  padding-top: 5%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.type1 {
+  padding: 3% 25%;
+  border: solid 3px #000;
+  border-right: solid 2px #000;
+  border-radius: 0 0 0 16px;
+}
+.type2 {
+  padding: 3% 25%;
+  border: solid 3px #000;
+  border-left: solid 2px #000;
+  border-radius: 0 0 16px 0;
+}
+.typeSolo {
+  padding: 3% 25%;
+  border: solid 3px #000;
+  border-radius: 0 0 16px 16px;
+}
+// Tipos //
+.Grass {
+  background-color: rgb(0, 209, 0);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Poison {
+  background-color: purple;
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Fire {
+  background-color: #ff8400;
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Flying {
+  background-color: #c689ff;
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Water {
+  background-color: #008cff;
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Bug {
+  background-color: rgb(190, 255, 116);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Normal {
+  background-color: rgb(236, 187, 141);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Electric {
+  background-color: rgb(255, 230, 0);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Ground {
+  background-color: rgb(228, 180, 21);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Fairy {
+  background-color: rgb(255, 200, 246);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Fighting {
+  background-color: rgb(190, 0, 0);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Psychic {
+  background-color: rgb(255, 88, 227);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Rock {
+  background-color: rgb(172, 169, 13);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Steel {
+  background-color: rgb(187, 223, 223);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Ghost {
+  background-color: rgb(86, 55, 97);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Ice {
+  background-color: rgb(176, 246, 255);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Dragon {
+  background-color: rgb(109, 41, 236);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+.Dark {
+  background-color: rgb(43, 40, 37);
+  box-shadow: inset 0 0 15px #000000ae;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+  color: white;
+}
+// FIM //
+
+// Selected //
+.selected {
+  background-color: #555555;
+  border: 2px solid #000000;
+  box-shadow: 0 0 20px black inset;
+  td {
+    color: white;
+    p {
+      border: 2px solid #000000;
+    }
+  }
+}
+.selected:nth-child(even) {
+  background-color: #555555;
+  border: 2px solid #000000;
+  box-shadow: 0 0 20px black inset;
+}
+// FIM //
